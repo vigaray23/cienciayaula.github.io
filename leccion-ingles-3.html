@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verbo to be | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="ingles-basico.html">Inglés básico</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">INGLÉS BÁSICO · LECCIÓN 3</p>
+      <h1>El verbo <em>to be</em></h1>
+
+      <h2>Am, is y are</h2>
+      <p>
+        El verbo <strong>to be</strong> significa “ser” o “estar”.
+        Usamos <strong>am</strong> con <strong>I</strong>, <strong>is</strong>
+        con <strong>he, she, it</strong>, y <strong>are</strong> con
+        <strong>you, we, they</strong>.
+      </p>
+
+      <div class="ejemplo">
+        <h3>Ejemplos</h3>
+        <p>
+          I <strong>am</strong> a student.<br>
+          She <strong>is</strong> my friend.<br>
+          They <strong>are</strong> in class.
+        </p>
+      </div>
+
+      <div class="actividad">
+        <p class="etiqueta">ACTIVIDAD</p>
+        <h2>Completa la oración</h2>
+        <p>She ___ a student.</p>
+
+        <input id="respuesta" type="text" placeholder="Escribe tu respuesta">
+        <button class="boton" id="revisar" type="button">
+          Revisar respuesta
+        </button>
+
+        <p id="resultado"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("revisar");
+    const respuesta = document.getElementById("respuesta");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      const texto = respuesta.value.trim().toLowerCase();
+
+      if (texto === "is") {
+        resultado.textContent = "¡Correcto! Con she usamos is.";
+        resultado.style.color = "#24723d";
+      } else {
+        resultado.textContent = "Inténtalo de nuevo. Recuerda que she va con is.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>

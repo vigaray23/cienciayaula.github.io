@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenguaje algebraico | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="algebra-basica.html">Álgebra básica</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">ÁLGEBRA BÁSICA · LECCIÓN 1</p>
+      <h1>Lenguaje algebraico</h1>
+
+      <h2>¿Qué es una variable?</h2>
+      <p>
+        Una variable es una letra que representa un número desconocido o un
+        valor que puede cambiar. Por ejemplo, en <strong>x + 5</strong>,
+        la letra <strong>x</strong> es una variable.
+      </p>
+
+      <div class="ejemplo">
+        <h3>Ejemplo</h3>
+        <p>
+          Si un cuaderno cuesta 12 pesos y compras <strong>x</strong> cuadernos,
+          el costo total se expresa como: <strong>12x</strong>.
+        </p>
+      </div>
+
+      <div class="actividad">
+        <p class="etiqueta">ACTIVIDAD</p>
+        <h2>Comprueba lo aprendido</h2>
+        <p>¿Cuál es la variable en la expresión <strong>3a + 7</strong>?</p>
+
+        <input id="respuesta" type="text" placeholder="Escribe tu respuesta"></input>
+        <button class="boton" onclick="revisarRespuesta()">Revisar respuesta</button>
+      
+        <p id="resultado"> </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+  <script src="scripts.js"></script>
+
+
+</body>
+</html>

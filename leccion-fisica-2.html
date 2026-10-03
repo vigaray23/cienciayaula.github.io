@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuerza | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="fisica-basica.html">Física básica</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">FÍSICA BÁSICA · LECCIÓN 2</p>
+      <h1>Fuerza</h1>
+
+      <h2>Empujar y jalar</h2>
+      <p>
+        Una fuerza es una interacción que puede cambiar el movimiento, la
+        dirección o la forma de un objeto. Las fuerzas pueden ser empujes o jalones.
+      </p>
+
+      <div class="ejemplo">
+        <h3>Ejemplo</h3>
+        <p>
+          Al empujar una puerta, aplicas una fuerza. Esa fuerza puede hacer
+          que la puerta se mueva y se abra.
+        </p>
+      </div>
+
+      <div class="actividad">
+        <p class="etiqueta">ACTIVIDAD</p>
+        <h2>Comprueba lo aprendido</h2>
+        <p>
+          ¿Qué acción representa una fuerza: <strong>empujar una caja</strong>
+          o <strong>mirar una caja</strong>?
+        </p>
+
+        <input id="respuesta" type="text" placeholder="Escribe tu respuesta">
+        <button class="boton" id="revisar" type="button">
+          Revisar respuesta
+        </button>
+
+        <p id="resultado"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("revisar");
+    const respuesta = document.getElementById("respuesta");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      const texto = respuesta.value.trim().toLowerCase();
+
+      if (texto === "empujar una caja" || texto === "empujar") {
+        resultado.textContent = "¡Correcto! Empujar una caja implica aplicar una fuerza.";
+        resultado.style.color = "#24723d";
+      } else {
+        resultado.textContent = "Inténtalo de nuevo. Una fuerza puede empujar o jalar un objeto.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>

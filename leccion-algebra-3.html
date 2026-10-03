@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecuaciones de primer grado | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="algebra-basica.html">Álgebra básica</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">ÁLGEBRA BÁSICA · LECCIÓN 3</p>
+      <h1>Ecuaciones de primer grado</h1>
+
+      <h2>Resolver una incógnita</h2>
+      <p>
+        Una ecuación contiene una igualdad y una incógnita. Resolverla consiste
+        en encontrar el valor de la letra que hace verdadera esa igualdad.
+      </p>
+
+      <div class="ejemplo">
+        <h3>Ejemplo</h3>
+        <p>
+          Resuelve: <strong>x + 4 = 12</strong><br>
+          Restamos 4 a ambos lados: <strong>x = 12 - 4</strong>.<br>
+          Resultado: <strong>x = 8</strong>.
+        </p>
+      </div>
+
+      <div class="actividad">
+        <p class="etiqueta">ACTIVIDAD</p>
+        <h2>Comprueba lo aprendido</h2>
+        <p>Resuelve la ecuación: <strong>x + 7 = 15</strong></p>
+
+        <input id="respuesta" type="text" placeholder="Escribe el valor de x">
+        <button class="boton" id="revisar" type="button">
+          Revisar respuesta
+        </button>
+
+        <p id="resultado"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("revisar");
+    const respuesta = document.getElementById("respuesta");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      const texto = respuesta.value.trim().toLowerCase();
+
+      if (texto === "8" || texto === "x = 8" || texto === "x=8") {
+        resultado.textContent = "¡Correcto! Si restas 7 a 15, obtienes x = 8.";
+        resultado.style.color = "#24723d";
+      } else {
+        resultado.textContent = "Incorrecto. Resta 7 a ambos lados de la ecuación.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>

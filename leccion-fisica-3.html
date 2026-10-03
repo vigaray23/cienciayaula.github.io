@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energía | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="fisica-basica.html">Física básica</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">FÍSICA BÁSICA · LECCIÓN 3</p>
+      <h1>Energía</h1>
+
+      <h2>La capacidad de producir cambios</h2>
+      <p>
+        La energía es la capacidad de realizar trabajo o producir cambios.
+        Puede presentarse como movimiento, calor, luz, electricidad y otras formas.
+      </p>
+
+      <div class="ejemplo">
+        <h3>Ejemplo</h3>
+        <p>
+          Una lámpara transforma energía eléctrica en energía luminosa para
+          producir luz.
+        </p>
+      </div>
+
+      <div class="actividad">
+        <p class="etiqueta">ACTIVIDAD</p>
+        <h2>Comprueba lo aprendido</h2>
+        <p>
+          ¿Qué tipo de energía utiliza una lámpara para encender?
+        </p>
+
+        <input id="respuesta" type="text" placeholder="Escribe tu respuesta">
+        <button class="boton" id="revisar" type="button">
+          Revisar respuesta
+        </button>
+
+        <p id="resultado"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("revisar");
+    const respuesta = document.getElementById("respuesta");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      const texto = respuesta.value.trim().toLowerCase();
+
+      if (texto === "eléctrica" || texto === "electrica" || texto === "energía eléctrica") {
+        resultado.textContent = "¡Correcto! Una lámpara utiliza energía eléctrica.";
+        resultado.style.color = "#24723d";
+      } else {
+        resultado.textContent = "Inténtalo de nuevo. Piensa en la energía que llega por el cable o la batería.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>

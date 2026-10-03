@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saludos y presentaciones | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="ingles-basico.html">Inglés básico</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">INGLÉS BÁSICO · LECCIÓN 1</p>
+      <h1>Saludos y presentaciones</h1>
+
+      <h2>Saludos comunes</h2>
+      <p>
+        En inglés usamos <strong>Hello</strong> o <strong>Hi</strong> para saludar.
+        Para despedirnos podemos usar <strong>Goodbye</strong> o <strong>Bye</strong>.
+      </p>
+
+      <div class="ejemplo">
+        <h3>Ejemplo</h3>
+        <p>
+          <strong>Person A:</strong> Hello! My name is Ana.<br>
+          <strong>Person B:</strong> Hi, Ana. I am Luis.
+        </p>
+      </div>
+
+      <div class="actividad">
+        <p class="etiqueta">ACTIVIDAD</p>
+        <h2>Comprueba lo aprendido</h2>
+        <p>¿Cómo se dice “hola” en inglés?</p>
+
+        <input id="respuesta" type="text" placeholder="Escribe tu respuesta">
+        <button class="boton" id="revisar" type="button">
+          Revisar respuesta
+        </button>
+
+        <p id="resultado"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("revisar");
+    const respuesta = document.getElementById("respuesta");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      const texto = respuesta.value.trim().toLowerCase();
+
+      if (texto === "hello" || texto === "hi") {
+        resultado.textContent = "¡Correcto! Hello y Hi significan hola.";
+        resultado.style.color = "#24723d";
+      } else {
+        resultado.textContent = "Inténtalo de nuevo. Recuerda: puede ser Hello o Hi.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>

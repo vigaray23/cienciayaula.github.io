@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación final | Inglés básico | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="ingles-basico.html">Inglés básico</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">INGLÉS BÁSICO · EVALUACIÓN FINAL</p>
+      <h1>Demuestra lo que aprendiste</h1>
+      <p>Responde las tres preguntas y revisa tu resultado.</p>
+
+      <div class="actividad">
+        <h3>1. ¿Cómo se dice “hola” en inglés?</h3>
+        <label><input type="radio" name="pregunta1" value="hello"> Hello</label><br>
+        <label><input type="radio" name="pregunta1" value="goodbye"> Goodbye</label><br>
+        <label><input type="radio" name="pregunta1" value="thanks"> Thanks</label>
+      </div>
+
+      <div class="actividad">
+        <h3>2. ¿Qué pronombre usamos para referirnos a “Luis y Ana”?</h3>
+        <label><input type="radio" name="pregunta2" value="she"> She</label><br>
+        <label><input type="radio" name="pregunta2" value="they"> They</label><br>
+        <label><input type="radio" name="pregunta2" value="it"> It</label>
+      </div>
+
+      <div class="actividad">
+        <h3>3. Completa: I ___ a student.</h3>
+        <label><input type="radio" name="pregunta3" value="am"> am</label><br>
+        <label><input type="radio" name="pregunta3" value="is"> is</label><br>
+        <label><input type="radio" name="pregunta3" value="are"> are</label>
+      </div>
+
+      <button class="boton" id="evaluar" type="button">Ver resultado</button>
+      <p id="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("evaluar");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      let puntos = 0;
+
+      const pregunta1 = document.querySelector('input[name="pregunta1"]:checked');
+      const pregunta2 = document.querySelector('input[name="pregunta2"]:checked');
+      const pregunta3 = document.querySelector('input[name="pregunta3"]:checked');
+
+      if (!pregunta1 || !pregunta2 || !pregunta3) {
+        resultado.textContent = "Responde las tres preguntas antes de ver tu resultado.";
+        resultado.style.color = "#b23a2d";
+        return;
+      }
+
+      if (pregunta1.value === "hello") puntos++;
+      if (pregunta2.value === "they") puntos++;
+      if (pregunta3.value === "am") puntos++;
+
+      if (puntos === 3) {
+        resultado.textContent = "¡Excelente! Obtuviste 3 de 3. Has completado Inglés básico.";
+        resultado.style.color = "#24723d";
+      } else if (puntos === 2) {
+        resultado.textContent = "Obtuviste 2 de 3. Vas muy bien; repasa la lección que necesites.";
+        resultado.style.color = "#d78d22";
+      } else {
+        resultado.textContent = "Obtuviste " + puntos + " de 3. Repasa las lecciones y vuelve a intentarlo.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>

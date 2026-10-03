@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación final | Física básica | CIMA</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header class="encabezado">
+    <a class="logo" href="index.html">
+      <img src="imagenes/logo-cima.png" alt="Logo oficial de CIMA">
+    </a>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="fisica-basica.html">Física básica</a>
+    </nav>
+
+    <a class="boton boton-secundario" href="index.html#plataforma">Acceder</a>
+  </header>
+
+  <main>
+    <section class="seccion leccion">
+      <p class="etiqueta">FÍSICA BÁSICA · EVALUACIÓN FINAL</p>
+      <h1>Demuestra lo que aprendiste</h1>
+      <p>Responde las tres preguntas y revisa tu resultado.</p>
+
+      <div class="actividad">
+        <h3>1. ¿Cuándo está un objeto en movimiento?</h3>
+        <label><input type="radio" name="pregunta1" value="cambia"> Cuando cambia de posición</label><br>
+        <label><input type="radio" name="pregunta1" value="quieto"> Cuando permanece quieto</label><br>
+        <label><input type="radio" name="pregunta1" value="color"> Cuando cambia de color</label>
+      </div>
+
+      <div class="actividad">
+        <h3>2. ¿Cuál acción representa una fuerza?</h3>
+        <label><input type="radio" name="pregunta2" value="empujar"> Empujar una caja</label><br>
+        <label><input type="radio" name="pregunta2" value="mirar"> Mirar una caja</label><br>
+        <label><input type="radio" name="pregunta2" value="escuchar"> Escuchar una caja</label>
+      </div>
+
+      <div class="actividad">
+        <h3>3. ¿Qué energía utiliza una lámpara para encender?</h3>
+        <label><input type="radio" name="pregunta3" value="electrica"> Energía eléctrica</label><br>
+        <label><input type="radio" name="pregunta3" value="sonora"> Energía sonora</label><br>
+        <label><input type="radio" name="pregunta3" value="viento"> Energía del viento</label>
+      </div>
+
+      <button class="boton" id="evaluar" type="button">Ver resultado</button>
+      <p id="resultado"></p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CIMA</strong> · Club de Inglés, Matemáticas y Ciencias Aplicadas
+  </footer>
+
+  <script>
+    const boton = document.getElementById("evaluar");
+    const resultado = document.getElementById("resultado");
+
+    boton.addEventListener("click", function () {
+      let puntos = 0;
+
+      const pregunta1 = document.querySelector('input[name="pregunta1"]:checked');
+      const pregunta2 = document.querySelector('input[name="pregunta2"]:checked');
+      const pregunta3 = document.querySelector('input[name="pregunta3"]:checked');
+
+      if (!pregunta1 || !pregunta2 || !pregunta3) {
+        resultado.textContent = "Responde las tres preguntas antes de ver tu resultado.";
+        resultado.style.color = "#b23a2d";
+        return;
+      }
+
+      if (pregunta1.value === "cambia") puntos++;
+      if (pregunta2.value === "empujar") puntos++;
+      if (pregunta3.value === "electrica") puntos++;
+
+      if (puntos === 3) {
+        resultado.textContent = "¡Excelente! Obtuviste 3 de 3. Has completado Física básica.";
+        resultado.style.color = "#24723d";
+      } else if (puntos === 2) {
+        resultado.textContent = "Obtuviste 2 de 3. Vas muy bien; repasa la lección que necesites.";
+        resultado.style.color = "#d78d22";
+      } else {
+        resultado.textContent = "Obtuviste " + puntos + " de 3. Repasa las lecciones y vuelve a intentarlo.";
+        resultado.style.color = "#b23a2d";
+      }
+    });
+  </script>
+</body>
+</html>
